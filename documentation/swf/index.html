@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Open Flash</title>
+  <link rel="icon" type="image/ico" href="/favicon.ico">
+  <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div>
+    <nav>
+      <a id="title" href="/">Open Flash</a>
+      <div class="flex-space"></div>
+      <a href="https://github.com/open-flash">GitHub</a>
+      <a href="/blog">Blog</a>
+      <a href="/documentation">Documentation</a>
+      <a href="/db">Database</a>
+    </nav>
+  </div>
+</header>
+<div id="page-content">
+  
+<h1 id="swf">SWF</h1>
+<p>An SWF file consists in a signature followed by a payload. The payload has the
+(potentially compressed) content of the movie. The signature defines the SWF
+version, compression method for the payload and full size after decompression.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">Swf :
+  SwfSignature SwfPayload
+</span></pre>
+<p>The SWF signature is always 8 bytes long. It describes how to interpret the
+SWF payload.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">SwfSignature :
+  SwfCompressionMethod SwfVersion UncompressedFileSize
+</span></pre>
+<p>The SWF compression method identifies the file as an SWF file, and how the
+payload is compressed.</p>
+<ul>
+<li><code>0x46 0x57 0x53</code> (ASCII: <code>FWS</code>): Uncompressed payload</li>
+<li><code>0x43 0x57 0x53</code> (ASCII: <code>CWS</code>): Compressed payload, using <code>deflate</code>.</li>
+<li><code>0x5a 0x57 0x53</code> (ASCII: <code>ZWS</code>): Compressed payload, using <code>lzma</code>.</li>
+</ul>
+<p>Any other value indicates that the file is <em>not</em> an SWF file.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">SwfCompressionMethod :
+  0x46 0x57 0x53
+  0x43 0x57 0x53
+  0x5a 0x57 0x53
+</span></pre>
+<p>Version of the SWF file. The version controls how further data is interpreted.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">SwfVersion :
+  Uint8
+</span></pre>
+<p>Sum of the size of the signature (8 bytes) and uncompressed payload.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">UncompressedFileSize :
+  leUint32
+</span></pre>
+<p>The payload contains the compressed content of the movie. It must be
+uncompressed first before being parsed. It consists in a header followed by a
+sequence of tags. Each tag acts as an instruction describing how to play the
+movie.</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">Movie :
+  SwfPayload[SWF]
+  uncompressDeflate(SwfPayload[CWF])
+  uncompressLzma(SwfPayload[CWF])
+  MovieHeader TagString
+</span></pre><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">MovieHeader :
+  Rect leUfixed8P8 leUint16 # frameSize, frameRate, frameCount
+</span></pre>
+
+</div>
+<div class="flex-space"></div>
+<footer>
+  <div>
+    <a href="https://github.com/open-flash">Open Flash</a> by <a href="https://demurgos.net">Charles "Demurgos" Samborski</a> and contributors
+  </div>
+</footer>
+</body>
+</html>
