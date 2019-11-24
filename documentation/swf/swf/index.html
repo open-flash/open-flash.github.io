@@ -19,16 +19,75 @@
     </nav>
   </div>
 </header>
-<div id="page-content">
+<div id="site-content">
   
-<h1 id="file-structure">File Structure</h1>
+
+<aside>
+  <ul>
+    
+    
+    <li>
+      <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;">SWF File Format Reference</a>
+      <ul>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;tags&#x2F;">SWF Tags</a>
+          <ul>
+            
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;tags&#x2F;define-shape&#x2F;">DefineShape</a>
+            </li>
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;tags&#x2F;place-object&#x2F;">PlaceObject</a>
+            </li>
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;tags&#x2F;show-frame&#x2F;">ShowFrame</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;base&#x2F;">Base types</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;primitives&#x2F;">Primitives</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;swf&#x2F;">File structure</a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    
+    <li>
+      <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;avmore&#x2F;">Avmore</a>
+    </li>
+    
+  </ul>
+</aside>
+
+
+  <div id="page-content">
+    
+<header>File structure</header>
+
+    
 <p>The <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf">Swf</a></em> container is at the root of an SWF file. This container has an 8-byte <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-signature">SwfSignature</a></em>
 followed by a compressed <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-payload">SwfPayload</a></em>. After decompression, the payload yields a <em><a href="https://open-flash.github.io/documentation/swf/swf/#movie">Movie</a></em> with
 the actual content: a header with global properties and a <em><a href="https://open-flash.github.io/documentation/swf/swf/#tag">Tag</a></em> stream describing how to play the
 movie.</p>
 <p>The general structure of an SWF file can be de described with the following diagram:</p>
-<pre style="background-color:#2b303b;">
-<span style="color:#c0c5ce;">      +--------------+---------------------------------------------------------+
+<pre style="background-color:#f5f5f5;">
+<span style="color:#1f1f1f;">      +--------------+---------------------------------------------------------+
  Swf  | SwfSignature |                       SwfPayload                        |
       +--------------+----------------------------+----------------------------+
                                                   |
@@ -157,6 +216,7 @@ tags require a long form header even if the body size is 62 bytes long or shorte
 and only the syntax changes.</p>
 
 
+  </div>
 </div>
 <div class="flex-space"></div>
 <footer>
