@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Open Flash</title>
+  <link rel="icon" type="image/ico" href="/favicon.ico">
+  <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div>
+    <nav>
+      <a id="title" href="/">Open Flash</a>
+      <div class="flex-space"></div>
+      <a href="https://github.com/open-flash">GitHub</a>
+      <a href="/blog">Blog</a>
+      <a href="/documentation">Documentation</a>
+      <a href="/db">Database</a>
+    </nav>
+  </div>
+</header>
+<div id="page-content">
+  
+<h1 id="file-structure">File Structure</h1>
+<p>The <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf">Swf</a></em> container is at the root of an SWF file. This container has an 8-byte <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-signature">SwfSignature</a></em>
+followed by a compressed <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-payload">SwfPayload</a></em>. After decompression, the payload yields a <em><a href="https://open-flash.github.io/documentation/swf/swf/#movie">Movie</a></em> with
+the actual content: a header with global properties and a <em><a href="https://open-flash.github.io/documentation/swf/swf/#tag">Tag</a></em> stream describing how to play the
+movie.</p>
+<p>The general structure of an SWF file can be de described with the following diagram:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">      +--------------+---------------------------------------------------------+
+ Swf  | SwfSignature |                       SwfPayload                        |
+      +--------------+----------------------------+----------------------------+
+                                                  |
+                                                  | decompress
+                                                  |
+                                                  v
+                     +-------------+-----+-----+-------------------------------+
+              Movie  | MovieHeader | Tag | Tag | Tag |  ...  | Tag | EndOfTags |
+                     +-------------+-----+-----+-------------------------------+
+</span></pre><h1 id="swf">Swf</h1>
+<p>The <em>Swf</em> element is the root of the file.</p>
+<p>OpenFlash has no type representing the <em>Swf</em> element itself. As it is a container for a <em>Movie</em>,
+its value is the value of the <em>Movie</em> it contains.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>Swf</em> :<br />
+   {<br />
+         <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-signature">SwfSignature</a></em><sub>(Compression=Simple)</sub> <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-payload">SwfPayload</a></em><sub>(Compression=Simple)</sub><br />
+      | <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-signature">SwfSignature</a></em><sub>(Compression=Deflate)</sub> <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-payload">SwfPayload</a></em><sub>(Compression=Deflate)</sub><br />
+      | <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-signature">SwfSignature</a></em><sub>(Compression=Lzma)</sub> <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf-payload">SwfPayload</a></em><sub>(Compression=Lzma)</sub><br />
+   }</p>
+</blockquote>
+<h1 id="swf-signature">Swf⁠Signature</h1>
+<p>The SWF signature is always 8 bytes long. It describes how to interpret the
+SWF payload.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>SwfSignature</em><sub>(Compression)</sub> :<br />
+   <em>CompressionMethod</em><sub>(Compression)</sub> <em>SwfVersion</em> <em>UncompressedSize</em></p>
+<p><em>CompressionMethod</em><sub>(Compression=Simple)</sub> :<br />
+   <code>0x46</code> <code>0x57</code> <code>0x53</code><br />
+<em>CompressionMethod</em><sub>(Compression=Deflate)</sub> :<br />
+   <code>0x43</code> <code>0x57</code> <code>0x53</code><br />
+<em>CompressionMethod</em><sub>(Compression=Lzma)</sub> :<br />
+   <code>0x5a</code> <code>0x57</code> <code>0x53</code></p>
+<p><em>SwfVersion</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#uint8">UINT8</a></p>
+<p><em>UncompressedSize</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#le-uint32">LE_UINT32</a></p>
+</blockquote>
+<p>The SWF compression method identifies the file as an SWF file, and how the
+payload is compressed.</p>
+<ul>
+<li><code>0x46 0x57 0x53</code> (ASCII: <code>FWS</code>): Uncompressed payload</li>
+<li><code>0x43 0x57 0x53</code> (ASCII: <code>CWS</code>): Compressed payload, using <code>deflate</code>.</li>
+<li><code>0x5a 0x57 0x53</code> (ASCII: <code>ZWS</code>): Compressed payload, using <code>lzma</code>.</li>
+</ul>
+<p>Any other value indicates that the file is <em>not</em> an SWF file.</p>
+<p>The SWF version indicates the version used for the file. The interpretation of
+some tags depends on this version.</p>
+<p>The <code>UncompressedSize</code> corresponds to the sum of the size of the SWF signature and of
+th uncompressed <em><a href="https://open-flash.github.io/documentation/swf/swf/#movie">Movie</a></em>.</p>
+<h1 id="swf-payload">Swf⁠Payload</h1>
+<p>The payload contains the compressed content of the movie. It must be
+uncompressed first before being parsed. It consists in a header followed by a
+sequence of tags. Each tag acts as an instruction describing how to play the
+movie.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>SwfPayload</em><sub>(Compression=Simple)</sub> :<br />
+   <em>Movie</em><br />
+<em>SwfPayload</em><sub>(Compression=Deflate)</sub> :<br />
+   compressWithDeflate(<em>Movie</em>)<br />
+<em>SwfPayload</em><sub>(Compression=Lzma)</sub> :<br />
+   compressWithLzma(<em>Movie</em>)</p>
+</blockquote>
+<h1 id="movie">Movie</h1>
+<p>Where <em><a href="https://open-flash.github.io/documentation/swf/swf/#swf">Swf</a></em> is a container, <em>Movie</em> is the actual content of the file.
+It has a header defining global properties and a stream of tags. Each tag
+represents an update to the runtime movie state, such as defining sprites or
+running ActionScript bytecode.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>Movie</em><sub>(SwfVersion)</sub> :<br />
+   <em>MovieHeader</em> <em>Tag</em><sub>(SwfVersion)</sub><sup>*</sup> <em>EndOfTags</em></p>
+</blockquote>
+<h1 id="movie-header">Movie⁠Header</h1>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>MovieHeader</em> :<br />
+   <em>frameSize</em> <em>frameRate</em> <em>frameCount</em></p>
+<p><em>frameSize</em> :<br />
+   <em>Rect</em></p>
+<p><em>frameRate</em> :<br />
+   LE_UFIXED8_P8</p>
+<p><em>frameCount</em> :<br />
+   LE_UINT16</p>
+</blockquote>
+<h1 id="tag">Tag</h1>
+<p>See the <a href="https://open-flash.github.io/documentation/swf/tags/">Tag index</a>.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>Tag</em><sub>(SwfVersion)</sub> :<br />
+   <em>ShortTag</em> | <em>LongTag</em><br />
+<em>ShortTag</em><sub>(SwfVersion)</sub> :<br />
+   <em>TagHeader</em>(code, tagSize)<sub>(code, tagSize)</sub> <em>TagBody(code)<sub>[size: <code>tagSize</code>]</sub></em><br />
+<em>LongTag</em><sub>(SwfVersion)</sub> :<br />
+   <em>TagHeader</em>(code, tagSize)<sub>(code, tagSize)</sub> <em>TagBody(code)<sub>[size: <code>tagSize</code>]</sub></em></p>
+</blockquote>
+<h1 id="tag-header">Tag⁠Header</h1>
+<p>A tag header defines the tag code and tag body size.</p>
+<p>The <strong>tag code</strong> is an unsigned 10-bit integer identifying the action corresponding to the tag.</p>
+<p>The <strong>tag body size</strong> is the size in bytes of the tag body following this header. It does not count
+the size of the tag header itself, only of the tag body. The body size is allowed to be <code>0</code>.</p>
+<p>There are two representations for the tag header: the short form (<code>ShortTagHeader</code>) and long form
+(<code>LongTagHeader</code>). The short form is compat but only allows to describe tags with a body size of
+62 bytes or less. The short form is recommended when the tag type allows it and the body size
+fits.</p>
+<p>⚠ Many tag types allow both forms, but not all. In particular bitmap definition
+tags require a long form header even if the body size is 62 bytes long or shorter.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>ShortTagHeader</em>(code, bodySize)<sub>[where: <code>bodySize &lt; 63</code>]</sub> :<br />
+   <em>codeAndSize</em>(code, bodySize)</p>
+<p><em>LongTagHeader</em>(code, bodySize) :<br />
+   <em>codeAndSize</em>(code, 63) <em>size</em><sub>[value: <code>bodySize</code>]</sub></p>
+<p><em>codeAndSize</em>(code, size)<sub>[where: <code>size &lt; 64</code>]</sub> :<br />
+   LE_UINT16<sub>[value: <code>code * 64 + size</code>]</sub></p>
+<p><em>size</em> :<br />
+   LE_UINT32</p>
+</blockquote>
+<p><a href="/mirrors/swf-spec-19.pdf#page=29">Adobe Reference: Tag format</a></p>
+<h1 id="tag-body">Tag⁠Body</h1>
+<p>The body of the tag depends on its type. The type can be derived from the code in the tag header.</p>
+<p>Open Flash allows a single type to correspond to multiple codes when the semantics are the same
+and only the syntax changes.</p>
+
+
+</div>
+<div class="flex-space"></div>
+<footer>
+  <div>
+    <a href="https://github.com/open-flash">Open Flash</a> by <a href="https://demurgos.net">Charles "Demurgos" Samborski</a> and contributors
+  </div>
+</footer>
+<script type="module" src="/sortable-tables.mjs"></script>
+</body>
+</html>

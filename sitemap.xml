@@ -31,4 +31,39 @@
             
         </url>
     
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/base/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/primitives/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/swf/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-shape/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/place-object/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/show-frame/</loc>
+            
+        </url>
+    
 </urlset>
