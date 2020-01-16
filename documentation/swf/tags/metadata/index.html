@@ -253,7 +253,38 @@
 <header>Metadata</header>
 
     
-<p>TODO</p>
+<p>Adds a metadata string describing the movie.</p>
+<p>The metadata strings are not interpreted by the player but can be used by other
+tools to store and retrieve information about the movie.
+For example, the Flash editing tools uses it to add an RPC XML document
+describing the project.</p>
+<h1 id="type">Type</h1>
+<blockquote>
+<p><strong><sup>Type</sup></strong><br />
+<em>Metadata</em> {<br />
+   metadata: <em>String</em><br />
+}</p>
+</blockquote>
+<details>
+<summary>
+Implementations
+</summary>
+<ul>
+<li><a href="https://docs.rs/swf-types/0.10.0/swf_types/tags/struct.Metadata.html">Rust</a></li>
+<li><a href="https://github.com/open-flash/swf-types/blob/master/ts/src/lib/tags/metadata.ts">TypeScript</a></li>
+</ul>
+</details>
+<h1 id="syntax">Syntax</h1>
+<ul>
+<li><strong>Code</strong>: <code>0x004d</code></li>
+</ul>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>Metadata</em> :<br />
+   <em>metadata</em> <a href="https://open-flash.github.io/documentation/swf/primitives/#padding">PADDING</a></p>
+<p><em>metadata</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#nul-utf8">NUL_UTF8</a></p>
+</blockquote>
 
 
   </div>
