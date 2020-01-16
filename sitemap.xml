@@ -52,7 +52,162 @@
         </url>
     
         <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/csm-text-settings/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-binary-data/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-bitmap/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-button-color-transform/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-button-sound/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-button/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-cff-font/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-dynamic-text/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-font-align-zones/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-font-info/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-font-name/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-font/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-glyph-font/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-jpeg-tables/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-morph-shape/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-scaling-grid/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-scene-and-frame-label-data/</loc>
+            
+        </url>
+    
+        <url>
             <loc>https://open-flash.github.io/documentation/swf/tags/define-shape/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-sound/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-sprite/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-text/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/define-video-stream/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/do-abc/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/do-action/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/do-init-action/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/enable-debugger/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/enable-postscript/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/export-assets/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/file-attributes/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/frame-label/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/import-assets/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/metadata/</loc>
             
         </url>
     
@@ -62,7 +217,67 @@
         </url>
     
         <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/protect/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/remove-object/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/script-limits/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/set-background-color/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/set-tab-index/</loc>
+            
+        </url>
+    
+        <url>
             <loc>https://open-flash.github.io/documentation/swf/tags/show-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/sound-stream-block/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/sound-stream-head/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/start-sound/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/start-sound2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/symbol-class/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/telemetry/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/swf/tags/video-frame/</loc>
             
         </url>
     
