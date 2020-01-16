@@ -253,7 +253,51 @@
 <header>FileAttributes</header>
 
     
-<p>TODO</p>
+<p>Sets the global file attributes.</p>
+<p>The attribute <code>useNetwork</code> corresponds to the &quot;local file system XOR network&quot;
+policy: a movie can either access the local file system or the network but not
+both. This policy is intended to prevent the exfiltration of local files.</p>
+<h1 id="type">Type</h1>
+<blockquote>
+<p><strong><sup>Type</sup></strong><br />
+<em>FileAttributes</em> {<br />
+   useNetwork: <em>Boolean</em><br />
+   useRelativeUrls: <em>Boolean</em><br />
+   useRelativeUrls: <em>Boolean</em><br />
+   noCrossDomainCaching: <em>Boolean</em><br />
+   useAs3: <em>Boolean</em><br />
+   hasMetadata: <em>Boolean</em><br />
+   useGpu: <em>Boolean</em><br />
+   useDirectBlit: <em>Boolean</em><br />
+}</p>
+</blockquote>
+<details>
+<summary>
+Implementations
+</summary>
+<ul>
+<li><a href="https://docs.rs/swf-types/0.10.0/swf_types/tags/struct.FileAttributes.html">Rust</a></li>
+<li><a href="https://github.com/open-flash/swf-types/blob/master/ts/src/lib/tags/file-attributes.ts">TypeScript</a></li>
+</ul>
+</details>
+<h1 id="syntax">Syntax</h1>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>FileAttributes</em> :<br />
+   <em>flags</em> <a href="https://open-flash.github.io/documentation/swf/primitives/#padding">PADDING</a></p>
+<p><em>flags</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#le-uint32">LE_UINT32</a></p>
+</blockquote>
+<p>Interpretation of <code>flags</code>:</p>
+<table><thead><tr><th>Mask</th><th>Comment</th></tr></thead><tbody>
+<tr><td><code>1 &lt;&lt; 0</code></td><td><code>useNetwork</code></td></tr>
+<tr><td><code>1 &lt;&lt; 1</code></td><td><code>useRelativeUrls</code></td></tr>
+<tr><td><code>1 &lt;&lt; 2</code></td><td><code>noCrossDomainCaching</code></td></tr>
+<tr><td><code>1 &lt;&lt; 3</code></td><td><code>useAs3</code></td></tr>
+<tr><td><code>1 &lt;&lt; 4</code></td><td><code>hasMetadata</code></td></tr>
+<tr><td><code>1 &lt;&lt; 5</code></td><td><code>useGpu</code></td></tr>
+<tr><td><code>1 &lt;&lt; 6</code></td><td><code>useDirectBlit</code></td></tr>
+</tbody></table>
 
 
   </div>
