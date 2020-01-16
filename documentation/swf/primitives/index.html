@@ -253,6 +253,13 @@
 <header>Primitives</header>
 
     
+<h1 id="padding">PADDING</h1>
+<p>Any sequence of bytes, including nothing. <code>PADDING</code> mostly used after
+useful date to reach the expected size. There is no value associated with
+padding itself.</p>
+<p>When emitting SWF data, <code>PADDING</code> should be minimized: use no padding at all
+or the shortest allowed padding. If padding is required, it should be filled with
+zeros.</p>
 <h1 id="uint8">UINT8</h1>
 <p>Unsigned 8-bit integer.</p>
 <h1 id="le-uint16">LE_UINT16</h1>
