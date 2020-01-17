@@ -229,6 +229,10 @@
         </li>
         
         <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;control&#x2F;">Control types</a>
+        </li>
+        
+        <li>
           <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;swf&#x2F;primitives&#x2F;">Primitives</a>
         </li>
         
@@ -253,7 +257,103 @@
 <header>DefineButton</header>
 
     
-<p>TODO</p>
+<h1 id="type">Type</h1>
+<blockquote>
+<p><strong><sup>Type</sup></strong><br />
+<em>DefineButton</em> {<br />
+   id: <em>Uint16</em><br />
+   trackAsMenu: <em>Boolean</em><br />
+   records: <em>ButtonRecord</em>[]<br />
+   actions: <em>ButtonCondAction</em>[]<br />
+}</p>
+</blockquote>
+<details>
+<summary>
+Implementations
+</summary>
+<ul>
+<li><a href="https://docs.rs/swf-types/0.10.0/swf_types/tags/struct.DefineButton.html">Rust</a></li>
+<li><a href="https://github.com/open-flash/swf-types/blob/master/ts/src/lib/tags/define-button.ts">TypeScript</a></li>
+</ul>
+</details>
+<h1 id="syntax">Syntax</h1>
+<p>ℹ <em>DefineButton</em> and <em>DefineButton2</em> do not end with padding.</p>
+<blockquote>
+<p><strong><sup>Syntax</sup></strong><br />
+<em>DefineButton</em> :<br />
+   <em>buttonId</em> <em>recordList</em> <em>avm1Buffer</em></p>
+<p><em>DefineButton2</em> :<br />
+      <em>buttonId</em> <em>button2Flags</em> <em>nextAction</em><sub>[value: <code>0</code>]</sub> <em>recordList</em> <a href="https://open-flash.github.io/documentation/swf/primitives/#padding">PADDING</a><br />
+   | {<br />
+         <em>buttonId</em><br />
+         <em>button2Flags</em><br />
+         <em>nextAction</em><sub>[value: <code>size(this.nextAction) + size(this.recordList)</code>]</sub><br />
+         <em>recordList</em><br />
+         <em>condActionList</em><br />
+      }</p>
+<p><em>buttonId</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#le-uint16">LE_UINT16</a></p>
+<p><em>avm1Buffer</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#uint8">UINT8</a>*</p>
+<p><em>buttonFlags</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#uint8">UINT8</a></p>
+<p><em>recordList</em> :<br />
+      <em>recordFlags<sub>[value: <code>0</code>]</sub></em><br />
+   | <em>record</em> <em>recordList</em></p>
+<p><em>record</em><sub>(Version=Button1)</sub> :<br />
+   <em>recordFlags</em><sub>[<code>value != 0</code>]</sub> <em>charcterId</em> <em>depth</em> <em><a href="https://open-flash.github.io/documentation/swf/base/#matrix">Matrix</a></em><br />
+<em>record</em><sub>(Version=Button2)</sub> :<br />
+   {<br />
+      <em>recordFlags</em><sub>[<code>value != 0</code>]</sub><br />
+      <em>charcterId</em><br />
+      <em>depth</em><br />
+      <em><a href="https://open-flash.github.io/documentation/swf/base/#matrix">Matrix</a></em><br />
+      <em><a href="https://open-flash.github.io/documentation/swf/base/#color-transform-with-alpha">ColorTransformWithAlpha</a></em><br />
+      <em><a href="https://open-flash.github.io/documentation/swf/control/#filter-list">FilterList</a></em><sub>[if: <code>recordFlags.hasFilters</code>]</sub><br />
+      <em><a href="https://open-flash.github.io/documentation/swf/control/#blend-mode">BlendMode</a></em><sub>[if: <code>recordFlags.hasBlendMode</code>]</sub><br />
+   }</p>
+<p><em>recordFlags</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#uint8">UINT8</a></p>
+<p><em>nextAction</em> :<br />
+   <a href="https://open-flash.github.io/documentation/swf/primitives/#le-uint16">LE_UINT16</a></p>
+<p><em>condActionList</em> :<br />
+      <em>nextAction</em><sub>[value: <code>0</code>]</sub> <em>condAction</em><br />
+   | {<br />
+         <em>nextAction</em><sub>[value: <code>size(this.nextAction) + size(this.condAction)</code>]</sub><br />
+         <em>condAction</em><br />
+         <em>condActionList</em><br />
+      }</p>
+<p><em>condAction</em> :<br />
+   <em>condActionflags</em> <em>avm1Buffer</em></p>
+</blockquote>
+<p>Interpretation of <code>buttonFlags</code>:</p>
+<table><thead><tr><th>Mask</th><th>Comment</th></tr></thead><tbody>
+<tr><td><code>1 &lt;&lt; 0</code></td><td><code>trackAsMenu</code></td></tr>
+<tr><td><code>0xfe</code></td><td>Reserved</td></tr>
+</tbody></table>
+<p>Interpretation of <code>recordFlags</code>:</p>
+<table><thead><tr><th>Mask</th><th>Comment</th></tr></thead><tbody>
+<tr><td><code>1 &lt;&lt; 0</code></td><td><code>stateUp</code></td></tr>
+<tr><td><code>1 &lt;&lt; 1</code></td><td><code>stateOver</code></td></tr>
+<tr><td><code>1 &lt;&lt; 2</code></td><td><code>stateDown</code></td></tr>
+<tr><td><code>1 &lt;&lt; 3</code></td><td><code>stateHitTest</code></td></tr>
+<tr><td><code>1 &lt;&lt; 4</code></td><td><code>hasFilters</code></td></tr>
+<tr><td><code>1 &lt;&lt; 5</code></td><td><code>hasBlendMode</code></td></tr>
+<tr><td><code>0xc0</code></td><td>Reserved</td></tr>
+</tbody></table>
+<p>Interpretation of <code>condActionFlags</code>:</p>
+<table><thead><tr><th>Mask</th><th>Comment</th></tr></thead><tbody>
+<tr><td><code>1 &lt;&lt; 0</code></td><td><code>idleToOverUp</code></td></tr>
+<tr><td><code>1 &lt;&lt; 1</code></td><td><code>overUpToIdle</code></td></tr>
+<tr><td><code>1 &lt;&lt; 2</code></td><td><code>overUpToOverDown</code></td></tr>
+<tr><td><code>1 &lt;&lt; 3</code></td><td><code>overDownToOverUp</code></td></tr>
+<tr><td><code>1 &lt;&lt; 4</code></td><td><code>overDownToOutDown</code></td></tr>
+<tr><td><code>1 &lt;&lt; 5</code></td><td><code>outDownToOverDown</code></td></tr>
+<tr><td><code>1 &lt;&lt; 6</code></td><td><code>outDownToIdle</code></td></tr>
+<tr><td><code>1 &lt;&lt; 7</code></td><td><code>idleToOverDown</code></td></tr>
+<tr><td><code>1 &lt;&lt; 8</code></td><td><code>overDownToIdle</code></td></tr>
+<tr><td><code>0xfe00</code></td><td><code>keyCode = (condActionFlags &gt;&gt; 9) &amp; 0x7f</code> (TODO)</td></tr>
+</tbody></table>
 
 
   </div>
