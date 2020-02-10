@@ -22,7 +22,527 @@
         </url>
     
         <url>
+            <loc>https://open-flash.github.io/documentation/avm1/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/add/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/add2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/and/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/ascii-to-char/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/bit-and/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/bit-l-shift/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/bit-or/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/bit-r-shift/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/bit-u-r-shift/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/bit-xor/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/call-function/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/call-method/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/call/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/cast-op/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/char-to-ascii/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/clone-sprite/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/constant-pool/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/decrement/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/define-function/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/define-function2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/define-local/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/define-local2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/delete/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/delete2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/divide/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/end-drag/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/enumerate/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/enumerate2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/equals/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/equals2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/extends/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/fs-command2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/get-member/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/get-property/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/get-time/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/get-url/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/get-url2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/get-variable/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/goto-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/goto-frame2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/goto-label/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/greater/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/if/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/implements-op/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/increment/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/init-array/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/init-object/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/instance-of/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/jump/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/less/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/less2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/mb-ascii-to-char/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/mb-char-to-ascii/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/mb-string-extract/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/mb-string-length/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/modulo/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/multiply/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/new-method/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/new-object/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/next-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/not/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/or/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/play/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/pop/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/previous-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/push-duplicate/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/push/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/random-number/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/remove-sprite/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/return/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/set-member/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/set-property/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/set-target/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/set-target2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/set-variable/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/stack-swap/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/start-drag/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/stop-sounds/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/stop/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/store-register/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/strict-equals/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/strict-mode/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/string-add/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/string-equals/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/string-extract/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/string-greater/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/string-length/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/string-less/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/subtract/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/target-path/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/throw/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/to-integer/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/to-number/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/to-string/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/toggle-quality/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/trace/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/try/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/type-of/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/wait-for-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/wait-for-frame2/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/avm1/actions/with/</loc>
+            
+        </url>
+    
+        <url>
             <loc>https://open-flash.github.io/documentation/avmore/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/bitmap/</loc>
             
         </url>
     
@@ -283,6 +803,11 @@
     
         <url>
             <loc>https://open-flash.github.io/documentation/swf/tags/video-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/zlib/</loc>
             
         </url>
     
