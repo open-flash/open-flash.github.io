@@ -309,7 +309,7 @@
             </li>
             
             <li>
-              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;avm1&#x2F;actions&#x2F;remove-sprite&#x2F;">CloneSprite</a>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;avm1&#x2F;actions&#x2F;remove-sprite&#x2F;">RemoveSprite</a>
             </li>
             
             <li>
@@ -689,6 +689,46 @@
     
 <ul>
 <li><a href="https://open-flash.github.io/documentation/avm1/actions/">AVM1 actions</a></li>
+</ul>
+<h1 id="avm1-representation">AVM1 representation</h1>
+<p>At the lowest level, AVM1 is compiled into a buffer containing AVM1 bytecode. There is no particular structure in this compiled bytecode. It is only intended to read a single raw action at a given position at a time.</p>
+<p>To perform static analysis or compile bytecode, it is useful to have a higher level representation for groups actions. Adobe's SWF specification uses a <em>sequence of action records</em> (&quot;ACTIONRECORD [zero or more]&quot;). Open flash uses a more advanced representation called a <em>Control Flow Graph</em> (CFG).</p>
+<h2 id="limitations-of-the-sequence-of-actions">Limitations of the sequence of actions</h2>
+<p>The <em>sequence of actions</em> view used by Adobe's specification is deeply flawed. It does not abstract the low-level byte encoding while being unable to describe some of the behavior of the interpreter. Adobe's interpreter only has a local view in the bytecode, only running one action at a time. The following features are supported by Adobe's player but not the <em>sequence of actions</em> representation:</p>
+<ul>
+<li>Overlapping actions</li>
+<li>Overlapping function, <code>try</code>, <code>catch</code>, <code>finally</code> and <code>with</code> bodies</li>
+<li>Jumping over slices containing garbage code that is never executed</li>
+</ul>
+<p>The core invalid assumption is that each action is followed by another action. Some actions (such as <code>Return</code> or <code>Throw</code>) don't have to be followed by another action as they end control flow. Other actions (<code>If</code>, <code>Jump</code>) allow to jump at arbitrary positions that wouldn't be found by only scanning the bytecode sequentially.</p>
+<h2 id="control-flow-graph">Control Flow Graph</h2>
+<p>The <em>control flow graph</em> is a classic structure used compilers and analyzers to represent the runtime semantics of code. It consists of <em>blocks</em> containing code, the blocks are linked through <em>edges</em> representing the possible transitions between blocks. For example an <code>If</code> action is represented with two edges: one pointing to the <em>block</em> to run in the <code>true</code> case and the other one for the <code>false</code> case.</p>
+<p>TODO: Add example with visualization</p>
+<p>Note that AVM1 blocks can be nested. This is used for function definitions, <code>With</code> actions and <code>Try</code> actions. Strictly speaking, Open Flash uses a &quot;hypergraph&quot;.</p>
+<p>A block represents a linear portion of bytecode. Compared to Adobe's single sequence of actions, a CFG can contain <em>multiple</em> blocks. There are no restrictions between blocks: their bytecode can be disjoint or overlap.</p>
+<p>Each CFG block has two parts:</p>
+<ul>
+<li>A list of simple actions. These actions are ran sequentially from start to end or until an error is raised. You cannot jump in or out of this list.</li>
+<li>A control flow section. This part describes what to do after this block: jump to another block, return from the function, enter a <code>With</code> block, etc. The actual behavior depends on the type of the block</li>
+</ul>
+<p>Open Flash defines the following types of blocks:</p>
+<ul>
+<li>Simple: Unconditional jump, either to another block or end of the function.</li>
+<li>If: Jump to one of two blocks based on the top of the stack.</li>
+<li>WaitForFrame, WaitForFrame2: Jump to one of two blocks based on loaded frames.</li>
+<li>Return: Return a value from the current function.</li>
+<li>Throw: Throw an exception.</li>
+<li>Try: Enter a <code>try</code> block.</li>
+<li>With: Enter a <code>with</code> block.</li>
+<li>Error: Corrupted bytecode forcing an interruption of the interpreter.</li>
+</ul>
+<h1 id="avm1-parser">AVM1 parser</h1>
+<p>The role of the AVM1 parser is to build the control flow graph from the AVM1 bytecode.</p>
+<p>The main challenge of the parser is to figure out where the blocks start.</p>
+<ul>
+<li>Entry point</li>
+<li>Target of any kind of jump (if, jump, waitForFrame, waitForFrame2)</li>
+<li>Can be reached from 2 or more overlapping actions with the same end</li>
 </ul>
 
 
