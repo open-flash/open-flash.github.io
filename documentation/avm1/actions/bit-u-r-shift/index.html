@@ -27,6 +27,66 @@
     
     
     <li>
+      <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;">ActionScript 2 Reference</a>
+      <ul>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;">Expressions</a>
+          <ul>
+            
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;op-pop&#x2F;">OpPop</a>
+            </li>
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;op-stack-call&#x2F;">OpStackCall</a>
+            </li>
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;op-temporary&#x2F;">OpTemporary</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;operational-extension&#x2F;">Operational Extension</a>
+          <ul>
+            
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;statements&#x2F;">Statements</a>
+          <ul>
+            
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;statements&#x2F;op-trace&#x2F;">OpTrace</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expression&#x2F;">Expression</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;trivia&#x2F;">Trivia</a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    
+    <li>
       <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;avm1&#x2F;">AVM1 Reference</a>
       <ul>
         
@@ -687,15 +747,16 @@
 <header>BitURShift</header>
 
     
-<pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">[arg2, arg1] → [arg2 &gt;&gt;&gt; arg1]
-</span></pre>
 <ul>
 <li>Action Code: <code>0x65</code></li>
 <li>Stack: <code>1 → 1</code></li>
 <li>SWF version: <code>5</code></li>
 </ul>
-<h2 id="adobe-documentation">Adobe documentation</h2>
+<h1 id="operational-as2">Operational AS2</h1>
+<pre style="background-color:#f5f5f5;">
+<span style="color:#1f1f1f;">@t0 = @pop();
+@push(@pop() &gt;&gt; @t0);
+</span></pre><h1 id="adobe-documentation">Adobe documentation</h1>
 <h3 id="actionbiturshift">ActionBitURShift</h3>
 <p>ActionBitURShift pops the value and shift count arguments from the stack. The value argument is converted to
 32-bit signed integer and only the least significant 5 bits are used as the shift count.</p>

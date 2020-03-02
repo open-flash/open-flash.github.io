@@ -27,6 +27,66 @@
     
     
     <li>
+      <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;">ActionScript 2 Reference</a>
+      <ul>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;">Expressions</a>
+          <ul>
+            
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;op-pop&#x2F;">OpPop</a>
+            </li>
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;op-stack-call&#x2F;">OpStackCall</a>
+            </li>
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expressions&#x2F;op-temporary&#x2F;">OpTemporary</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;operational-extension&#x2F;">Operational Extension</a>
+          <ul>
+            
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;statements&#x2F;">Statements</a>
+          <ul>
+            
+            
+            <li>
+              <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;statements&#x2F;op-trace&#x2F;">OpTrace</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;expression&#x2F;">Expression</a>
+        </li>
+        
+        <li>
+          <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;as2&#x2F;trivia&#x2F;">Trivia</a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    
+    <li>
       <a href="https:&#x2F;&#x2F;open-flash.github.io&#x2F;documentation&#x2F;avm1&#x2F;">AVM1 Reference</a>
       <ul>
         
@@ -687,15 +747,37 @@
 <header>Push</header>
 
     
-<pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">[] → [value*]
-</span></pre>
 <ul>
 <li>Action Code: <code>0x96</code></li>
 <li>Stack: <code>0 → n</code></li>
 <li>SWF version: <code>4</code></li>
 </ul>
-<h2 id="adobe-documentation">Adobe documentation</h2>
+<h1 id="operational-as2">Operational AS2</h1>
+<p>This corresponds to a sequence of <code>@push(...);</code> statements. One statement per
+value, in the same order.</p>
+<p>Here are some examples:</p>
+<pre style="background-color:#f5f5f5;">
+<span style="color:#1f1f1f;">// {
+//   action: &quot;push&quot;,
+//   values: []
+// }
+
+// (Empty statement)
+;
+</span></pre><pre style="background-color:#f5f5f5;">
+<span style="color:#1f1f1f;">// {
+//   action: &quot;push&quot;,
+//   values: [
+//     {type: &quot;null&quot;},
+//     {type: &quot;string&quot;, value: &quot;foo&quot;},
+//     {type: &quot;boolean&quot;, value: true}
+//   ]
+// }
+
+@push(null);
+@push(&quot;foo&quot;);
+@push(true);
+</span></pre><h2 id="adobe-documentation">Adobe documentation</h2>
 <h3 id="actionpush">ActionPush</h3>
 <p>ActionPush pushes one or more values to the stack.</p>
 <table>
