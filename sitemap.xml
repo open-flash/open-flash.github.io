@@ -32,6 +32,16 @@
         </url>
     
         <url>
+            <loc>https://open-flash.github.io/documentation/as2/abstract-extension/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/declaration/</loc>
+            
+        </url>
+    
+        <url>
             <loc>https://open-flash.github.io/documentation/as2/expression/</loc>
             
         </url>
@@ -42,22 +52,117 @@
         </url>
     
         <url>
-            <loc>https://open-flash.github.io/documentation/as2/expressions/op-pop/</loc>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-constant/</loc>
             
         </url>
     
         <url>
-            <loc>https://open-flash.github.io/documentation/as2/expressions/op-stack-call/</loc>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-identifier/</loc>
             
         </url>
     
         <url>
-            <loc>https://open-flash.github.io/documentation/as2/expressions/op-temporary/</loc>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-pop/</loc>
             
         </url>
     
         <url>
-            <loc>https://open-flash.github.io/documentation/as2/operational-extension/</loc>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-pseudo-call/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-register/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-stack-array/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-stack-call/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-stack-object/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/abstract-temporary/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/assignment-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/binary-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/conditional-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/logical-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/member-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/new-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/postfix-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/prefix-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/primary-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/expressions/sequence-expression/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/literals/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/pattern/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/script/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/statement/</loc>
             
         </url>
     
@@ -67,7 +172,32 @@
         </url>
     
         <url>
-            <loc>https://open-flash.github.io/documentation/as2/statements/op-trace/</loc>
+            <loc>https://open-flash.github.io/documentation/as2/statements/abstract-call-frame/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/statements/abstract-push/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/statements/abstract-trace/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/statements/break-statement/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/statements/expression-statement/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://open-flash.github.io/documentation/as2/tokens/</loc>
             
         </url>
     
