@@ -854,9 +854,9 @@
 </ul>
 <h1 id="abstract-as2">Abstract AS2</h1>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">@t0 = @pop();
+<code><span style="color:#1f1f1f;">@t0 = @pop();
 @push(@pop()[@t0]);
-</span></pre><h1 id="adobe-documentation">Adobe documentation</h1>
+</span></code></pre><h1 id="adobe-documentation">Adobe documentation</h1>
 <h2 id="actiongetmember">ActionGetMember</h2>
 <p>ActionGetMember retrieves a named property from an object, and pushes the value of the property onto the
 stack.</p>
@@ -871,8 +871,8 @@ stack.</p>
 </ol>
 <p>For example, assume obj is an object, and it is assigned a property, foo, as follows:</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">obj.foo = 3;
-</span></pre>
+<code><span style="color:#1f1f1f;">obj.foo = 3;
+</span></code></pre>
 <p>Then, ActionGetMember with object set to obj and name set to foo pushes 3 onto the stack. If the specified
 property does not exist, undefined is pushed to the stack.</p>
 <p>The object parameter cannot actually be of type Object. If the object parameter is a primitive type such as
@@ -880,9 +880,9 @@ number, Boolean, or string, it is converted automatically to a temporary wrapper
 Boolean, or String. Thus, methods of wrapper objects can be invoked on values of primitive types. For example,
 the following correctly prints 5:</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">var x = &quot;Hello&quot;;
+<code><span style="color:#1f1f1f;">var x = &quot;Hello&quot;;
 trace (x.length);
-</span></pre>
+</span></code></pre>
 <p>In this case, the variable, x, contains the primitive string, &quot;Hello&quot;. When x.length is retrieved, a temporary
 wrapper object for x is created by using the String type, which has a length property.</p>
 

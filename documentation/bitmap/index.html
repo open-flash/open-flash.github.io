@@ -929,13 +929,13 @@
 It is used to compute sizes and offsets based on alignment.</p>
 <p>Using mathematical notation, the function can be defined as:</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;"># ⌈ x ⌉ represents the ceiling funtion
+<code><span style="color:#1f1f1f;"># ⌈ x ⌉ represents the ceiling funtion
 intCeil(n, k) = k × ⌈ n / k ⌉
-</span></pre>
+</span></code></pre>
 <p>It can also be defined using the modulo operator instead of division and ceiling:</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">intCeil(n, k) = n + k - 1 - ((n - 1) % k)
-</span></pre>
+<code><span style="color:#1f1f1f;">intCeil(n, k) = n + k - 1 - ((n - 1) % k)
+</span></code></pre>
 <p><strong>Example</strong>: Data rows of lossless images must be aligned on 4 bytes. This means that padding must be inserted such that the total size is a multiple of 4. The <code>intCeil(n, 4)</code> function returns this total size for <code>n</code> bytes of useful data. If we have 253 bytes of useful data, we must add 3 bytes of padding to reach 256 bytes, hence <code>intCeil(253, 4) == 256</code>.</p>
 <p>ℹ Note: If <code>n</code> is already a multiple of <code>k</code>, the result is just <code>n</code>.</p>
 <h1 id="image-x-swf-abmp">image/x-swf-abmp</h1>

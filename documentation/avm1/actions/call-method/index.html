@@ -848,8 +848,8 @@
 
     
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">[...arguments, argsCount, methodName, object] → [returnValue]
-</span></pre>
+<code><span style="color:#1f1f1f;">[...arguments, argsCount, methodName, object] → [returnValue]
+</span></code></pre>
 <ul>
 <li>Action Code: <code>0x52</code></li>
 <li>Stack: <code>3+ → 1</code></li>
@@ -869,12 +869,12 @@ example, if CallMethod is invoked with object obj and method name blank, it's eq
 syntax:</li>
 </ol>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">obj();
-</span></pre>
+<code><span style="color:#1f1f1f;">obj();
+</span></code></pre>
 <p>If a method’s name is foo, it's equivalent to:</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">obj.foo();
-</span></pre>
+<code><span style="color:#1f1f1f;">obj.foo();
+</span></code></pre>
 <ol start="2">
 <li>Pops the ScriptObject, object, from the stack.</li>
 <li>Pops the number of arguments, args, from the stack.</li>

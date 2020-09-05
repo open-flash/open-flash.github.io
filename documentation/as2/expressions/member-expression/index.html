@@ -854,43 +854,43 @@
 <h2 id="examples">Examples</h2>
 <p>Here are some examples describing the syntax tree from each member expression.</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">a
+<code><span style="color:#1f1f1f;">a
 // MemberExpression:                        `a`
 //   NewMemberExpression:                   `a`
 //     BalancedMemberExpression:            `a`
 //       PrimaryExpression:                 `a`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new a
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new a
 // MemberExpression:                        `new a`
 //   NewMemberExpression:                   `new a`
 //     NewMemberExpression:                 `    a`
 //       BalancedMemberExpression: `a`          `a`
 //         PrimaryExpression: `a`               `a`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">a()
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">a()
 // MemberExpression:                        `a()`
 //   CallMemberExpression:                  `a()`
 //     BalancedMemberExpression:            `a  `
 //       PrimaryExpression:                 `a`
 //     Arguments:                           ` ()`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new a()
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new a()
 // MemberExpression:                        `new a()`
 //   NewMemberExpression:                   `new a()`
 //     BalancedMemberExpression:            `new a()`
 //       BalancedMemberExpression:          `    a  `
 //         PrimaryExpression                    `a`
 //       Arguments:                         `     ()`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new new a
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new new a
 // MemberExpression:                        `new new a`
 //   NewMemberExpression:                   `new new a`
 //     NewMemberExpression:                 `    new a`
 //       NewMemberExpression:                   `    a`
 //         BalancedMemberExpression:                `a`
 //           PrimaryExpression:                     `a`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">a()()
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">a()()
 // MemberExpression:                        `a()()`
 //   CallMemberExpression:                  `a()()`
 //     CallMemberExpression:                `a()  `
@@ -898,8 +898,8 @@
 //         PrimaryExpression:               `a`
 //       Arguments:                         ` ()`
 //     Arguments:                           `   ()`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new new a()()
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new new a()()
 // MemberExpression:                        `new new a()()`
 //   NewMemberExpression:                   `new new a()()`
 //     BalancedMemberExpression:            `new new a()()`
@@ -908,8 +908,8 @@
 //           PrimaryExpression:                     `a`
 //         Arguments:                           `     ()`
 //       Arguments:                         `           ()`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new new a()
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new new a()
 // MemberExpression:                        `new new a()`
 //   NewMemberExpression:                   `new new a()`
 //     NewMemberExpression:                 `    new a()`
@@ -917,8 +917,8 @@
 //         BalancedMemberExpression:            `    a  `
 //           PrimaryExpression:                     `a`
 //         Arguments:                           `     ()`
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new a()()
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new a()()
 // MemberExpression:                        `new a()()`
 //   CallMemberExpression:                  `new a()()`
 //     NewMemberExpression:                 `new a()`
@@ -927,7 +927,7 @@
 //           PrimaryExpression:                 `a`
 //         Arguments:                       `     ()`
 //   Arguments:                             `       ()`
-</span></pre><h2 id="syntax">Syntax</h2>
+</span></code></pre><h2 id="syntax">Syntax</h2>
 <blockquote>
 <p><strong><sup>Syntax</sup></strong><br />
 <em>MemberExpression</em> :<br />
@@ -940,10 +940,10 @@
 <p>Represents a member expression with zero or more <code>new</code> operators than <em>Arguments</em>. Excess <code>new</code> operators can be interpreted as matched with implicit <code>()</code> <em>Arguments</em> term.</p>
 <h2 id="examples-1">Examples</h2>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new Array
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">new Array()
-</span></pre>
+<code><span style="color:#1f1f1f;">new Array
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">new Array()
+</span></code></pre>
 <blockquote>
 <p><strong><sup>Syntax</sup></strong><br />
 <em>NewMemberExpression</em> :<br />

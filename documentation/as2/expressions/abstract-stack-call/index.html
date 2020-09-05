@@ -850,14 +850,14 @@
 <p>Calls a function by reading the arguments from the stack.</p>
 <h1 id="examples">Examples</h1>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">function hello(name) {
+<code><span style="color:#1f1f1f;">function hello(name) {
   trace(&quot;Hello, &quot; + name + &quot;!);
 }
 
 @push(&quot;OpenFlash&quot;);
-@stackCall(trace, 1);
-</span></pre><pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">function makeArray() {
+@stackCall(hello, 1);
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">function makeArray() {
   var array = [];
   for (var i = 0; i &lt; arguments.length; i++) {
     array.push(arguments[i]);
@@ -876,7 +876,7 @@ if (Math.random() &lt; 0.5) {
 }
 
 var strings = @stackCall(makeArray, argCount);
-</span></pre><h1 id="syntax">Syntax</h1>
+</span></code></pre><h1 id="syntax">Syntax</h1>
 <blockquote>
 <p><strong><sup>Syntax</sup></strong><br />
 <em>AbstractStackCall</em> :<br />
@@ -890,12 +890,12 @@ var strings = @stackCall(makeArray, argCount);
 <h1 id="abstract-type">Abstract type</h1>
 <p>TODO</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">{
+<code><span style="color:#1f1f1f;">{
   type: &quot;OpStackCall&quot;;
   callee: Expression;
   argumentCount: Expression;
 }
-</span></pre>
+</span></code></pre>
 
   </div>
 </div>

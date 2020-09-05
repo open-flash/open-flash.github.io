@@ -853,7 +853,7 @@ the actual content: a header with global properties and a <em><a href="https://o
 movie.</p>
 <p>The general structure of an SWF file can be de described with the following diagram:</p>
 <pre style="background-color:#f5f5f5;">
-<span style="color:#1f1f1f;">      +--------------+---------------------------------------------------------+
+<code><span style="color:#1f1f1f;">      +--------------+---------------------------------------------------------+
  Swf  | SwfSignature |                       SwfPayload                        |
       +--------------+----------------------------+----------------------------+
                                                   |
@@ -863,7 +863,7 @@ movie.</p>
                      +-------------+-----+-----+-------------------------------+
               Movie  | MovieHeader | Tag | Tag | Tag |  ...  | Tag | EndOfTags |
                      +-------------+-----+-----+-------------------------------+
-</span></pre><h1 id="swf">Swf</h1>
+</span></code></pre><h1 id="swf">Swf</h1>
 <p>The <em>Swf</em> element is the root of the file.</p>
 <p>OpenFlash has no type representing the <em>Swf</em> element itself. As it is a container for a <em>Movie</em>,
 its value is the value of the <em>Movie</em> it contains.</p>
