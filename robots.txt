@@ -1,2 +1,3 @@
 User-agent: *
+Allow: /
 Sitemap: https://open-flash.github.io/sitemap.xml
