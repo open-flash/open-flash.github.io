@@ -898,7 +898,34 @@ This type is only rarely used for 16-bit values.</p>
 <p>Buffers containing encoding errors are invalid.</p>
 <p>This encodes a string as a sequence of unicode codepoints, except for the codepoint <code>0</code>.</p>
 <h1 id="le-float32">LE_FLOAT32</h1>
+<p>Little-endian representation for a floating-point IEE-754 binary32.</p>
 <p>Based on the documentation of the modulo action, Adobe uses <code>0x7FC00000</code> as the canonical NaN representation.</p>
+<h1 id="le32-float64">LE32_FLOAT64</h1>
+<p>Mixed-endian representation for a floating-point IEE-754 binary64.</p>
+<p>The endianness here is different from the regular &quot;little-endian&quot; or &quot;big-endian&quot;.
+We chose to call it the &quot;Little-Endian 32-bit invariant endianness&quot;, or <em>LE-32</em>.
+This name is inspired by <a href="https://developer.arm.com/documentation/ddi0290/g/unaligned-and-mixed-endian-data-access-support/mixed-endian-access-support/differences-between-be-32-and-be-8-buses">ARM's legacy <em>BE-32</em> endianness</a>.</p>
+<p>In LE-32, each word of 4 bytes uses LE for its bits, but groups of multiple
+words (such as the 8 bytes for a float64) store the words themselves in BE.</p>
+<p>Assume we have a floating number interpreted as a <code>Uint64</code> named <code>x</code>.
+The floating point can then be decoded with the following masks:</p>
+<ul>
+<li>Sign: <code>(x &gt;&gt; 63) &amp; 1</code></li>
+<li>Exponent: <code>(x &gt;&gt; 52) &amp; ((1 &lt;&lt; 11) - 1)</code></li>
+<li>Mantissa: <code>x &amp; ((1 &lt;&lt; 52) - 1)</code></li>
+</ul>
+<p>When writing this number <code>x</code> to a buffer of 8 bytes, the following table
+describes the bits in each byte depending on the endianness.</p>
+<table><thead><tr><th></th><th>Little Endian</th><th>Big Endian</th><th>LE-32</th></tr></thead><tbody>
+<tr><td>bytes[0]</td><td>0:7</td><td>56:63</td><td>32:39</td></tr>
+<tr><td>bytes[1]</td><td>8:15</td><td>48:55</td><td>40:47</td></tr>
+<tr><td>bytes[2]</td><td>16:23</td><td>40:47</td><td>48:55</td></tr>
+<tr><td>bytes[3]</td><td>24:31</td><td>32:39</td><td>56:63</td></tr>
+<tr><td>bytes[4]</td><td>32:39</td><td>24:31</td><td>0:7</td></tr>
+<tr><td>bytes[5]</td><td>40:47</td><td>16:23</td><td>8:15</td></tr>
+<tr><td>bytes[6]</td><td>48:55</td><td>8:15</td><td>16:23</td></tr>
+<tr><td>bytes[7]</td><td>56:63</td><td>0:7</td><td>24:31</td></tr>
+</tbody></table>
 
 
   </div>

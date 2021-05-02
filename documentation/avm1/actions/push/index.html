@@ -881,6 +881,9 @@
 <li>Stack: <code>0 → n</code></li>
 <li>SWF version: <code>4</code></li>
 </ul>
+<p><strong>TODO</strong>: Document behavior with padding (most likely not allowed). Eg: <code>01 00000000 00 00 00 00</code> seems to cause a corrupted data error.</p>
+<p>The Adobe documentation has an error. It indicates that Float64 (double) values are encoded
+using a Little-Endian representation when in fact it uses <a href="https://open-flash.github.io/documentation/swf/primitives/#uint8">LE32_FLOAT64</a>.</p>
 <h1 id="abstract-as2">Abstract AS2</h1>
 <p>This corresponds to a sequence of <code>@push(...);</code> statements. One statement per
 value, in the same order.</p>
