@@ -436,6 +436,24 @@
         <loc>https://open-flash.github.io/documentation/bitmap/</loc>
     </url>
     <url>
+        <loc>https://open-flash.github.io/documentation/mm-cfg/</loc>
+    </url>
+    <url>
+        <loc>https://open-flash.github.io/documentation/mm-cfg/error-reporting-enable/</loc>
+    </url>
+    <url>
+        <loc>https://open-flash.github.io/documentation/mm-cfg/max-warnings/</loc>
+    </url>
+    <url>
+        <loc>https://open-flash.github.io/documentation/mm-cfg/trace-output-buffered/</loc>
+    </url>
+    <url>
+        <loc>https://open-flash.github.io/documentation/mm-cfg/trace-output-file-enable/</loc>
+    </url>
+    <url>
+        <loc>https://open-flash.github.io/documentation/mm-cfg/trace-output-file-name/</loc>
+    </url>
+    <url>
         <loc>https://open-flash.github.io/documentation/swf/</loc>
     </url>
     <url>
